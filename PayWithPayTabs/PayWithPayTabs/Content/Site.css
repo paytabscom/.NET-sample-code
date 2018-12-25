@@ -1,0 +1,457 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+
+html, body {
+    color: #000000;
+    font: 12px 'Arial';
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+}
+
+html, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+:focus {
+    outline: 0;
+}
+
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+/* H Tags */
+h1, h2, h3 {
+    font: 11px "Tahoma";
+}
+
+h1 {
+    color: #000;
+    font: 14px/14px Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin: 0px;
+    background: url(Images/h2-bg.png) no-repeat;
+    padding-left: 18px;
+    text-decoration: none;
+}
+
+    h1 a {
+        color: #000;
+        text-decoration: none;
+    }
+
+        h1 a:hover {
+            color: #f85800;
+            text-decoration: none;
+        }
+
+h2 {
+    color: #f85800;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: #444343;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+
+    h3 a {
+        color: #000000;
+    }
+
+p, table {
+    margin: 0 0 10px;
+    overflow: visible;
+}
+
+.innertable {
+    margin: 0 0 0px;
+    overflow: visible;
+}
+
+.float-l {
+    float: left;
+}
+
+.float-r {
+    float: right;
+}
+/*globl css: to align div left and right */
+.font11 {
+    font-size: 11px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.marginright10 {
+    margin-right: 10px;
+}
+
+.margintop30 {
+    margin-top: 30px !important;
+}
+
+.marbot {
+    margin-bottom: 10px !important;
+}
+
+.marbot2 {
+    margin-bottom: 0px !important;
+}
+
+.martop {
+    margin-top: 10px !important;
+}
+
+.tabletdborderrightnone tr td {
+    border-right: 0px !important;
+}
+
+tr.cell1 {
+    background: #f5f0ed;
+}
+
+tr.cell2 {
+    background: #b7aea7;
+}
+
+tr.cellnotextbox {
+    background: #b7aea7;
+    line-height: 20px;
+}
+
+tr.cell3 {
+    background: #959595;
+}
+
+    tr.cell3 td {
+        color: #fff;
+    }
+
+tr.cell4 {
+    background: #C9C1B9;
+}
+
+.MouseHover {
+    cursor: pointer;
+}
+
+
+#main {
+    float: left;
+    color: #000;
+    width: 100%;
+    padding: 0px;
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+
+#steps {
+    float: left;
+}
+
+#steps {
+    float: left;
+    width: 600px;
+    margin-left: 41px;
+}
+
+    #steps span.active {
+        display: block;
+        float: left;
+        font: 15px/18px 'Arial';
+        background: url(images/step1-active-image2.png) no-repeat;
+        width: 100px;
+        background-position: right 0.8px;
+        width: 216px;
+        height: 49px;
+        position: relative;
+        z-index: 5;
+    }
+
+        #steps span.active p {
+            color: #FFF;
+        }
+
+    #steps span.step2 {
+        z-index: 4;
+    }
+
+    #steps span.step3 {
+        z-index: 3;
+    }
+
+    #steps span {
+        display: block;
+        float: left;
+        font: 15px/18px 'Arial';
+        background: url(images/step1Image2.png) no-repeat;
+        width: 216px;
+        background-position: right 0.8px;
+        height: 49px;
+        position: relative;
+        z-index: 5;
+        margin-left: -42px;
+    }
+
+        #steps span p {
+            color: #5C5C5C;
+            font: bold 13px/16px 'Arial';
+            width: 147px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #steps span.step1 p {
+            margin-left: 16px;
+        }
+
+        #steps span.step2 p {
+            margin-left: 34px;
+        }
+
+        #steps span.step3 p {
+            margin-left: 28px;
+        }
+
+        #steps span.hidbg {
+            display: block;
+            float: left;
+            font: 15px/18px 'Arial';
+            background: none;
+            width: 100px;
+            margin-right: 30px;
+            background-position: right 0.8px;
+        }
+
+        #steps span.active {
+            font-weight: bold;
+        }
+
+.mar_bottom {
+    margin-bottom: 12px !important;
+}
+
+.mandatory {
+    color: #000;
+    font-size: 14px;
+    text-align: left;
+    width: 200px;
+    line-height: 24px;
+    margin-right: 5px;
+}
+
+.mandatoryText {
+    color: #ff0000;
+    font-size: 14px;
+    text-align: left;
+    width: auto;
+    float: left;
+    line-height: 15px;
+}
+
+.padding_10 {
+    margin-top: 10px;
+}
+
+.padding_left_20 {
+    padding-left: 20px !important;
+}
+
+.width_label_110 {
+    width: 110px;
+}
+
+legend {
+    background: none repeat scroll 0 0 #e6e6e6 !important;
+    font: bold 13px/15px 'Arial'; /*position: relative;*/
+    width: auto;
+    margin-top: -20px;
+    float: left;
+}
+
+    legend .legendleft {
+        background: url(images/legend-dark-grey-left.png) #B7AEA7;
+        float: left;
+        width: 8px;
+        height: 27px;
+    }
+
+    legend .legendmid {
+        float: left;
+        margin-top: 6px;
+        padding: 1px 15px 0;
+        background: url(Images/legend-dark-grey-mid.png);
+    }
+
+    legend .legendright {
+        background: url(images/legend-dark-grey-right.png) #B7AEA7; /*float:right;*/
+        float: left;
+        width: 8px;
+        height: 27px;
+    }
+
+    legend .backgroundColor {
+        background-color: #C9C1B9;
+    }
+
+    legend.legend2 {
+        background: none repeat scroll 0 0 #e6e6e6;
+        font: bold 13px/15px 'Arial';
+        position: relative;
+        width: auto;
+    }
+
+        legend.legend2 .legendleft {
+            background: url(images/legend-dark-grey-left.png) #FFF;
+            float: left;
+            width: 8px;
+            height: 27px;
+        }
+
+        legend.legend2 .legendmid {
+            float: left;
+            margin-top: 6px;
+        }
+
+        legend.legend2 .legendright {
+            background: url(images/legend-dark-grey-right.png) #FFF;
+            float: right;
+            width: 8px;
+            height: 27px;
+        }
+
+fieldset {
+    border: 1px solid #CCCCCC;
+    float: left;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+    fieldset .row select {
+        margin-top: auto !important;
+    }
+
+b.labelleft label {
+    text-align: left;
+    font-size: 16px;
+}
+
+b.labelleft span {
+    text-align: left;
+    font-size: 16px;
+}
+
+span.label {
+    float: left;
+    font-size: 14px;
+    line-height: 24px;
+    margin-left: 0px;
+    text-align: left;
+}
+
+.jumbotron div {
+    font-size: 12px;
+}
+
+.legend_Frame {
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: darkgrey 1px solid;
+    background: darkgrey !important;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; /* future proofing */
+    -khtml-border-radius: 10px; /* for old Konqueror browsers */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: -22px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+    -moz-box-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+    -o-box-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+}
+
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #27AE61 url("Images/up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+a:hover.back-to-top {
+	background-color: #000;
+}

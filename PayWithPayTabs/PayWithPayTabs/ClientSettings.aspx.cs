@@ -29,13 +29,15 @@ namespace TestPTWebService
         {
             XElement xelement = XElement.Load(HttpContext.Current.Server.MapPath("~/Client.xml"));
 
+            string baseURL = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
+
             var urlList = xelement.Descendants().Select(nd => new Models.Settings
             {
                 Name = nd.Attribute("Name").Value,
                 SecretKey = nd.Attribute("SecretKey").Value,
                 EmailAddress = nd.Attribute("EmailAddress").Value.ToUpper(),
                 Password = nd.Attribute("Password").Value,
-                SiteUrl = nd.Attribute("Website").Value,
+                SiteUrl = baseURL, // nd.Attribute("Website").Value,
             }).ToList();
 
             txtClientName.Text = urlList[0].Name;

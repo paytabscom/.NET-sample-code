@@ -46,7 +46,7 @@
             <div class="form-group">
                 <label class="col-md-2 control-label">WebSite URL</label>
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="txtWebSite" CssClass="input-lg form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ReadOnly ID="txtWebSite" CssClass="input-lg form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ID="rfv_txtWebSite" ControlToValidate="txtWebSite" ValidationGroup="CientInfo" SetFocusOnError="true" ForeColor="Red" ErrorMessage="WebSite required"></asp:RequiredFieldValidator>
                 </div>
             </div>

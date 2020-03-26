@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using Newtonsoft.Json;
 
 namespace TestPTWebService
 {
@@ -28,7 +23,7 @@ namespace TestPTWebService
                         return;
                     }
                 }
-                if (Page.Request.QueryString.Count >0)
+                if (Page.Request.QueryString.Count > 0)
                 {
                     GetReceipt(Page.Request.QueryString.ToString());
                 }
@@ -73,6 +68,7 @@ namespace TestPTWebService
                 ObjVerifyPaymentRequest.ReferenceNumber = Helper.PayTabsSession.LastPaymentReferenceNumber;
                 ObjVerifyPaymentRequest.SecretKey = Helper.PayTabsSession.SecretKey;
 
+                Helper.PayTabsSession.LastTransactionJson = Helper.PayTabsSession.LastPaymentReferenceNumber;
                 //Log to File
                 Logger.Info("VerifyPayment - Start", "GetReceipt", ObjVerifyPaymentRequest);
    
@@ -80,7 +76,9 @@ namespace TestPTWebService
 
                 if (Helper.PayTabsSession.PageRequestList != null)
                 {
-                    var lastPayment = new Models.VerifyPaymentResponse();//JsonConvert.DeserializeObject<Models.VerifyPaymentResponse>(Helper.PayTabsSession.LastTransactionJson); 
+                    var lastPayment = new Models.VerifyPaymentResponse();
+                    //var tt = JsonConvert.DeserializeObject<Models.VerifyPaymentResponse>(Helper.PayTabsSession.LastTransactionJson);
+
                     var sessionLastPayment = Helper.PayTabsSession.PageRequestList.FirstOrDefault(a => a.PaymentReference == Helper.PayTabsSession.LastPaymentReferenceNumber);
                     lastPayment.transaction_id = objUtility.ReturnQueryParameterValue(Helper.PayTabsSession.LastTransactionJson, "transaction_id");
                     lastPayment.shipping_address = objUtility.ReturnQueryParameterValue(Helper.PayTabsSession.LastTransactionJson, "shipping_address");
@@ -105,26 +103,26 @@ namespace TestPTWebService
                         lblCost.Text = sessionLastPayment.UnitPrice;
                         lblQuantity.Text = sessionLastPayment.Quantity.ToString();
 
-                        lblTotalAmount.Text = lastPayment.currency + " " + lastPayment.amount;
-                        lblAmount.Text = lastPayment.currency + " " + lastPayment.amount;
-                        lblAmountDue.Text = lastPayment.currency + " " + lastPayment.amount;
+                        lblTotalAmount.Text = sessionLastPayment.Currency + " " + sessionLastPayment.Amount;
+                        lblAmount.Text = sessionLastPayment.Currency + " " + sessionLastPayment.Amount;
+                        lblAmountDue.Text = sessionLastPayment.Currency + " " + sessionLastPayment.Amount;
                         lblInvoiceNo.Text = lastPayment.invoice_id;
                         
-                        lblPhone.Text = lastPayment.phone_num;
+                        lblPhone.Text = sessionLastPayment.Phonenumber;
                         lblTransactionDate.Text = DateTime.Now.Date.ToString();
                         
-                        lblShippingAddress.Text = lastPayment.shipping_address + " " + lastPayment.shipping_city + " " + lastPayment.shipping_state + " " + lastPayment.shipping_country;
+                        lblShippingAddress.Text = sessionLastPayment.AddressShipping + " " + sessionLastPayment.CityShipping + " " + sessionLastPayment.StateShipping + " " + sessionLastPayment.CountryShipping;
                         //lblShippingAddress.Text = lastPayment.AddressShipping + " " + lastPayment.CityShipping + " " + lastPayment.StateShipping + " " + lastPayment.CountryShipping;
-                        lblMessage.Text = ObjResponse.detail;
-                        lblEmail.Text = lastPayment.email;
+                        lblMessage.Text = ObjResponse.detail + " " + ObjResponse.result;
+                        lblEmail.Text = sessionLastPayment.Email;
                         imgMessage.Src = "Content/Images/sucesspayment.png";
-                        lblMessage.Text = "Payment successfully done.";
+                        // lblMessage.Text = "Payment successfully done.";
                     }
 
-                    if (ObjResponse.response_code == "800")
+                    if (ObjResponse.response_code != "100")
                     {
                         lblErrorMessage.ForeColor = Color.DarkRed;
-                        lblMessage.Text = "Payment successfully done.";
+                        lblMessage.Text = ObjResponse.result + " " + ObjResponse.detail;
                         imgMessage.Src = "Content/Images/error.png";
                     }
                 }

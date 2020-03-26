@@ -54,15 +54,19 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="MakePaymentStep1.aspx">Make Payment</a></li>
                     </ul>
+                    <!--
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="RefundPayment.aspx">Refund Payment</a></li>
                     </ul>
+                    -->
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="PaymentsDoneToday.aspx">Today's Payments</a></li>
                     </ul>
+                    <!--
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="Reports.aspx">Reports</a></li>
                     </ul>
+                    -->
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="ClientSettings.aspx">Settings</a></li>
                     </ul>

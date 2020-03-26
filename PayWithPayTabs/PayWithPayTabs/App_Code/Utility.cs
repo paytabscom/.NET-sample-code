@@ -1,29 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web;
-using System.Web.ModelBinding;
-using Newtonsoft.Json;
 
 /// <summary>
 /// Summary description for Utility
 /// </summary>
 public class Utility : System.Web.UI.Page
 {
-	public Utility()
-	{
-		//
-		// TODO: Add constructor logic here
-		//
-	}
-  
+    public Utility()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+    }
+
     public string MakeWebServiceCall(string methodCall, string formContent)
     {
+        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
         string ApiURL = ConfigurationManager.AppSettings["PaymentGatewayAPRURL"];
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(ApiURL + methodCall);
         request.Method = "POST";
@@ -50,7 +49,6 @@ public class Utility : System.Web.UI.Page
         response.Close();
 
         return responseFromServer;
-
     }
 
 
@@ -85,17 +83,15 @@ public class Utility : System.Web.UI.Page
         response.Close();
 
         return responseFromServer;
-
     }
 
     public string GenerateReferenceNumber()
     {
-       return "PT" + DateTime.Now.ToString("yyyyMMddHHmmssffffff");         
+        return "PT" + DateTime.Now.ToString("yyyyMMddHHmmssffffff");
     }
 
     public string ReturnQueryParameterValue(string QueryString, string Parameter)
     {
-
         NameValueCollection myCol = HttpUtility.ParseQueryString(QueryString);
         string ParamValue = QueryString.Contains("=") ? myCol[Parameter] : QueryString;
 
@@ -130,7 +126,7 @@ public class Utility : System.Web.UI.Page
     //        Response.Redirect("~/Default.aspx");
     //    }
     //}
- 
+
     public string CreatePayPage(Models.PayPageRequest objPayPageRequest)
     {
         return "merchant_email=" + objPayPageRequest.MerchantEmail
@@ -175,14 +171,14 @@ public class Utility : System.Web.UI.Page
                 + "&refund_amount=" + objRefundRequest.RefundAmount
                 + "&refund_reason=" + objRefundRequest.RefundReason;
     }
-    
+
 
     public string ReturnTransactionReport(Models.ReportRequest objReportRequest)
     {
         return "merchant_email=" + objReportRequest.MerchantEmail
-               + "&secret_key=" + objReportRequest.SecretKey
-               + "&startdate=" + objReportRequest.StartDate //DateTime.Now.Date.AddDays(-10).ToString("d")
-               + "&enddate=" + objReportRequest.EndDate; // DateTime.Now.Date.ToString("d");
+            + "&secret_key=" + objReportRequest.SecretKey
+            + "&startdate=" + objReportRequest.StartDate //DateTime.Now.Date.AddDays(-10).ToString("d")
+            + "&enddate=" + objReportRequest.EndDate; // DateTime.Now.Date.ToString("d");
     }
 
     public string PayTabsIPN(Models.ReportRequest objReportRequest)
@@ -199,7 +195,7 @@ public class Utility : System.Web.UI.Page
 
     public Models.VerifyPaymentResponse VerifyPayment(Models.VerifyPaymentRequest objPaymentRequest)
     {
-	
+
         WebClient client = new WebClient();
         client.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
         string ApiURL = ConfigurationManager.AppSettings["PaymentGatewayAPRURL"];
@@ -212,8 +208,8 @@ public class Utility : System.Web.UI.Page
 
         return JsonConvert.DeserializeObject<Models.VerifyPaymentResponse>(response);
     }
-	
-	public string GetPayTabResponseMessage(PayTabRequestType requestType, string Key, string erroMessageOther = "") //When this method is called for requestType = VerifyPayment then pass third parameter as error received from PayTabs
+
+    public string GetPayTabResponseMessage(PayTabRequestType requestType, string Key, string erroMessageOther = "") //When this method is called for requestType = VerifyPayment then pass third parameter as error received from PayTabs
     {
         string ResponseString = "Unassigned";
         switch (requestType)

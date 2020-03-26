@@ -21,7 +21,7 @@
             <div class="form-group">
                 <label class="col-md-2 control-label">Secret Key</label>
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="txtSecretKey" CssClass="input-lg form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtSecretKey" CssClass="input-lg form-control" ReadOnly="true"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ID="rfv_txtSecretKey" ControlToValidate="txtSecretKey" ValidationGroup="CientInfo" SetFocusOnError="true" ForeColor="Red" ErrorMessage="SecretKey required"></asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -30,7 +30,7 @@
             <div class="form-group">
                 <label class="col-md-2 control-label">Email Address</label>
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="txtEmailAddress" CssClass="input-lg form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtEmailAddress" CssClass="input-lg form-control" ReadOnly="true"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ID="rfv_txtEmailAddress" ControlToValidate="txtEmailAddress" ValidationGroup="CientInfo" SetFocusOnError="true" ForeColor="Red" ErrorMessage="EmailAddress required"></asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -46,7 +46,7 @@
             <div class="form-group">
                 <label class="col-md-2 control-label">WebSite URL</label>
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ReadOnly ID="txtWebSite" CssClass="input-lg form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ReadOnly="true" ID="txtWebSite" CssClass="input-lg form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ID="rfv_txtWebSite" ControlToValidate="txtWebSite" ValidationGroup="CientInfo" SetFocusOnError="true" ForeColor="Red" ErrorMessage="WebSite required"></asp:RequiredFieldValidator>
                 </div>
             </div>

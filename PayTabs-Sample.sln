@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.809.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayTabs-Sample", "PayTabs-Sample\PayTabs-Sample.csproj", "{68B7F578-B046-4EC3-A194-F266D664EE66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68B7F578-B046-4EC3-A194-F266D664EE66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B7F578-B046-4EC3-A194-F266D664EE66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B7F578-B046-4EC3-A194-F266D664EE66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B7F578-B046-4EC3-A194-F266D664EE66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2350FCB0-30EA-4312-AF42-6D4C7EEBCB3D}
+	EndGlobalSection
+EndGlobal

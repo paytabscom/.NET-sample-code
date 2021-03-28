@@ -1,1 +1,0 @@
-To begin, please change the values in the Client.xml file which is the root folder, with the Paytabs settings values. Once done then continue with the site.

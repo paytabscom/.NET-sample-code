@@ -1,0 +1,117 @@
+@model PayTabs_Sample.Models.Transaction
+
+@{ ViewData["Title"] = "Create"; }
+
+<h1>Create</h1>
+
+<h4>Transaction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProfileId" class="control-label"></label>
+                <input asp-for="ProfileId" class="form-control" />
+                <span asp-validation-for="ProfileId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ServerKey" class="control-label"></label>
+                <input asp-for="ServerKey" class="form-control" />
+                <span asp-validation-for="ServerKey" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TranType" class="control-label"></label>
+                <select asp-for="TranType" class="form-control">
+                    <option value="auth">auth</option>
+                    <option value="capture" disabled>capture</option>
+                    <option value="sale">sale</option>
+                    <option value="void" disabled>void</option>
+                    <option value="refund" disabled>refund</option>
+                </select>
+                <span asp-validation-for="TranType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TranClass" class="control-label"></label>
+                <select asp-for="TranClass" class="form-control">
+                    <option value="ecom">ecom</option>
+                    <option value="moto">moto</option>
+                    <option value="recurring" disabled>recurring</option>
+                </select>
+                <span asp-validation-for="TranClass" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CartId" class="control-label"></label>
+                <input asp-for="CartId" class="form-control" />
+                <span asp-validation-for="CartId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CartCurrency" class="control-label"></label>
+                <input asp-for="CartCurrency" class="form-control" />
+                <span asp-validation-for="CartCurrency" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CartAmount" class="control-label"></label>
+                <input asp-for="CartAmount" class="form-control" />
+                <span asp-validation-for="CartAmount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CartDescription" class="control-label"></label>
+                <input asp-for="CartDescription" class="form-control" />
+                <span asp-validation-for="CartDescription" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PaypageLang" class="control-label"></label>
+                <select asp-for="PaypageLang" class="form-control">
+                    <option value="en">en</option>
+                    <option value="ar">ar</option>
+                </select>
+                <span asp-validation-for="PaypageLang" class="text-danger"></span>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HideShipping" /> @Html.DisplayNameFor(model => model.HideShipping)
+                </label>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsFramed" /> @Html.DisplayNameFor(model => model.IsFramed)
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ReturnURL" class="control-label"></label>
+                <input asp-for="ReturnURL" class="form-control" />
+                <span asp-validation-for="ReturnURL" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CallbackURL" class="control-label"></label>
+                <input asp-for="CallbackURL" class="form-control" />
+                <span asp-validation-for="CallbackURL" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

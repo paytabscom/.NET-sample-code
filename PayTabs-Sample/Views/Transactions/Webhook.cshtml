@@ -1,0 +1,82 @@
+@model PayTabs_Sample.Models.Transaction_Result
+
+@{
+    ViewData["Title"] = "Webhook details";
+}
+
+<h1>Webhook details</h1>
+
+<div>
+    <h4>Transaction Result</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.tranRef)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.tranRef)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.respStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.respStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.respCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.respCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.respMessage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.respMessage)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.acquirerMessage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.acquirerMessage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.acquirerRRN)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.acquirerRRN)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.cartId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.cartId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerEmail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerEmail)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.signature)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.signature)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.token)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.token)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

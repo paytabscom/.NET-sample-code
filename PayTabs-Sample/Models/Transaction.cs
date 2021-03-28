@@ -33,6 +33,9 @@ namespace PayTabs_Sample.Models
         [JsonIgnore]
         public string ServerKey { get; set; }
 
+        [JsonIgnore]
+        public string Endpoint { get; set; }
+
         //[JsonProperty(PropertyName = "payment_methods")]
         //public string[] PaymentMethods { get; set; }
 

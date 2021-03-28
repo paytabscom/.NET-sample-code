@@ -14,10 +14,12 @@ namespace PayTabs_Sample.Helpers
 
         public Transaction_Response Send(Transaction transaction)
         {
-            string base_url = "https://secure.paytabs.com/payment/request";
+            string base_url = transaction.Endpoint; // "https://secure.paytabs.com/";
+            string payment_url = base_url + "payment/request";
+
             string body = JsonConvert.SerializeObject(transaction);
 
-            var client = new RestClient(base_url);
+            var client = new RestClient(payment_url);
             //client.UseJson();
             //client.AddHandler("applications/json", )
 

@@ -50,7 +50,7 @@ namespace PayTabs_Sample.Controllers
         // POST: Transactions/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProfileId,ServerKey,TranType,TranClass,CartId,CartCurrency,CartAmount,CartDescription,PaypageLang,HideShipping,IsFramed,ReturnURL,CallbackURL")] Transaction transaction)
+        public async Task<IActionResult> Create([Bind("Id,ProfileId,Endpoint,ServerKey,TranType,TranClass,CartId,CartCurrency,CartAmount,CartDescription,PaypageLang,HideShipping,IsFramed,ReturnURL,CallbackURL")] Transaction transaction)
         {
             if (ModelState.IsValid)
             {

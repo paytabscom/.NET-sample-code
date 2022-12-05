@@ -1,120 +1,120 @@
-@model PayTabs_Sample.Models.Transaction
+@model Transaction
 
 @{
-    ViewData["Title"] = "Details";
+	ViewData["Title"] = "Details";
 }
 
 <h1>Details</h1>
 
 <div>
-    <h4>Transaction</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TriedToPay)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TriedToPay)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.IsSucceed)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.IsSucceed)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tran_Ref)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tran_Ref)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.IsValid_Signature)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.IsValid_Signature)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ProfileId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ProfileId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ServerKey)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ServerKey)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TranType)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TranType)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TranClass)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TranClass)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CartId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CartId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CartCurrency)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CartCurrency)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CartAmount)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CartAmount)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CartDescription)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CartDescription)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PaypageLang)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PaypageLang)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HideShipping)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HideShipping)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.IsFramed)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.IsFramed)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ReturnURL)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ReturnURL)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CallbackURL)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CallbackURL)
-        </dd>
-    </dl>
+	<h4>Transaction</h4>
+	<hr/>
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.TriedToPay)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.TriedToPay)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.IsSucceed)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.IsSucceed)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Tran_Ref)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Tran_Ref)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.IsValid_Signature)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.IsValid_Signature)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.ProfileId)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.ProfileId)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.ServerKey)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.ServerKey)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.TranType)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.TranType)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.TranClass)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.TranClass)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CartId)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CartId)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CartCurrency)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CartCurrency)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CartAmount)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CartAmount)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CartDescription)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CartDescription)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.PaypageLang)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.PaypageLang)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.HideShipping)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.HideShipping)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.IsFramed)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.IsFramed)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.ReturnURL)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.ReturnURL)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CallbackURL)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CallbackURL)
+		</dd>
+	</dl>
 </div>
 <div>
-    <a asp-action="Pay" asp-route-id="@Model.Id">Pay</a> |
-    <a asp-action="Index">Back to List</a>
+	<a asp-action="Pay" asp-route-id="@Model.Id">Pay</a> |
+	<a asp-action="Index">Back to List</a>
 </div>

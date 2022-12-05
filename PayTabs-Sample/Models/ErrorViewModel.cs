@@ -1,11 +1,8 @@
-using System;
+namespace PayTabs_Sample.Models;
 
-namespace PayTabs_Sample.Models
+public class ErrorViewModel
 {
-    public class ErrorViewModel
-    {
-        public string RequestId { get; set; }
+	public string RequestId { get; set; }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
-    }
+	public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 }

@@ -1,106 +1,106 @@
-@model IEnumerable<PayTabs_Sample.Models.Transaction>
+@model IEnumerable<Transaction>
 
 @{ ViewData["Title"] = "Index"; }
 
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+	<a asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProfileId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServerKey)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsSucceed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TranType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TranClass)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CartId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CartCurrency)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CartAmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PaypageLang)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HideShipping)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsFramed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReturnURL)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CallbackURL)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProfileId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServerKey)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsSucceed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TranType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TranClass)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CartId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CartCurrency)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CartAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PaypageLang)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HideShipping)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsFramed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReturnURL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CallbackURL)
-            </td>
-            <td>
-                <a asp-action="Pay" asp-route-id="@item.Id">Pay</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
-            </td>
-        </tr>
-        }
-    </tbody>
+	<thead>
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.ProfileId)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.ServerKey)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.IsSucceed)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.TranType)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.TranClass)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.CartId)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.CartCurrency)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.CartAmount)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.PaypageLang)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.HideShipping)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.IsFramed)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.ReturnURL)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.CallbackURL)
+		</th>
+		<th></th>
+	</tr>
+	</thead>
+	<tbody>
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.ProfileId)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ServerKey)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.IsSucceed)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.TranType)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.TranClass)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.CartId)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.CartCurrency)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.CartAmount)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PaypageLang)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.HideShipping)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.IsFramed)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ReturnURL)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.CallbackURL)
+			</td>
+			<td>
+				<a asp-action="Pay" asp-route-id="@item.Id">Pay</a> |
+				<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+				<a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+			</td>
+		</tr>
+	}
+	</tbody>
 </table>
